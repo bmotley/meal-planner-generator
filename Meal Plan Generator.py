@@ -16,7 +16,7 @@ soup = BeautifulSoup(page.content, "html.parser")
 
 title_elements = [title.get_text() for title in soup.find_all('h3')]
 #looks for the title text of all h3 classes
-titles_end = title_elements.index('NEWRecipes by Ingredient')
+titles_end = title_elements.index('Recipes by Ingredient')
 #creates an index for where the recipe titles end
 titles = title_elements[:titles_end-0]
 #creates list of cleaned recipe titles
@@ -31,8 +31,8 @@ target_ibdex2 = text_elements2.index('/recipes/casserole-recipes')
 links = text_elements2[target_ibdex2+1:target_ibdex1-0]
 #creates clean list of links that correspond to title list
 
-for i in range( len(links)):
-    links[i] = "https://www.hellofresh.com" + links[i]
+#for i in range( len(links)):
+#    links[i] = "https://www.hellofresh.com" + links[i]
 #adds the full url so it's a clickable link
 
 
